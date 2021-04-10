@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>電子發票</title>
+    <style>
+        @charset "utf-8";
+        /* CSS Document */
+
+        body {
+            background: rgba(73, 157, 180, 0.842);
+            margin: 0;
+        }
+
+        .box {
+            display: block;
+            margin: 150px auto 30px auto;
+            width: 400px;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 20px;
+            background-color: rgb(245, 209, 130);
+            outline-style: double;
+            outline-color: rgb(211, 211, 211);
+            color: rgb(49, 40, 70);
+            box-shadow: 10px 10px rgb(102, 79, 28);
+        }
+
+        :focus {
+            outline-color: chocolate;
+        }
+
+        .padding {
+            padding: 10px 0px;
+            font-size: 18px;
+        }
+
+        #inputaccount {
+            padding: 5px;
+            border-style: groove;
+            border-radius: 3px;
+            border-color: sienna;
+            border-width: thin;
+        }
+
+        .Btn {
+            display: block;
+            margin: 5px auto;
+            width: 80px;
+            text-align: center;
+            padding: 10px 10px;
+            background-color: rgb(221, 127, 90);
+            color: #ffffff;
+            border-color: goldenrod;
+            border-radius: 10px;
+            border-width: 1px;
+            border-style: solid;
+            font-size: 20px;
+        }
+
+        .Btn:hover {
+            background: rgb(141, 87, 65);
+        }
+
+        .Btn:active {
+            background: rgb(255, 153, 69);
+        }
+
+        a {
+            color: rgb(64, 55, 100);
+            text-decoration: none;
+        }
+
+
+        a:hover {
+            font-size: 20;
+            color: tomato;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: #6d1b37;
+            text-decoration: none;
+        }
+
+        h1 {
+            margin: 10px;
+        }
+
+        hr {
+            width: 300px;
+            border-top: 2px;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom: 1px;
+            border-color: rgb(41, 28, 77);
+            border-style: ridge;
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class='wrapper'>
+        <div class="box">
+            <form action="/formprocess.php" method="post">
+                <div id="loginPage">
+                    <a href="work.html">
+                        <h1>電子發票</h1>
+                    </a>
+                    <span style="font-size: 20px;">系統登入</span>
+                    <hr>
+                    <div class="padding">
+                        帳號：<input type="text" name="" id="inputaccount" value="" placeholder="請輸入帳號" autofocus></input>
+                    </div>
+                    <div class="padding">
+                        密碼：<input type="password" name="" id="inputaccount" value="" placeholder="請輸入密碼"></input>
+                    </div>
+                    <div class="padding">
+                        <input class="Btn" type="submit" name="" id=" enter" value="登入"></input>
+                    </div>
+                    <hr>
+                    <div>
+                        <p style="font-size: 8px;">測試用帳號：demo、密碼：demo</p>
+                    </div>
+            </form>
+        </div>
+
+
+</body>
+
+</html>
