@@ -39,7 +39,7 @@
         }
 
         /*輸入框*/
-        #inputaccount {
+        .inputaccount {
             padding: 5px;
             border-style: groove;
             border-radius: 3px;
@@ -110,32 +110,91 @@
 </head>
 
 <body>
-
-    <div class="box">
-        <form action="/formprocess.php" method="post">
-            <div id="loginPage">
+    <div id="result" class="box">
+        <form method="post" ;>
+            <div id=" loginPage">
                 <a href="work.html">
                     <h1>電子發票</h1>
                 </a>
                 <span style="font-size: 20px;">系統登入</span>
                 <hr>
                 <div class="padding">
-                    帳號：<input type="text" name="" id="inputaccount" value="" placeholder="請輸入帳號" autofocus
-                        required></input>
+                    帳號：<input class="inputaccount" type="text" name="accountInput" id="account" value=""
+                        placeholder="請輸入帳號" autofocus required></input>
                 </div>
                 <div class="padding">
-                    密碼：<input type="password" name="" id="inputaccount" value="" placeholder="請輸入密碼" required></input>
+                    密碼：<input class="inputaccount" type="password" name="passwordInput" id="password" value=""
+                        placeholder="請輸入密碼" required></input>
                 </div>
                 <div class="padding">
-                    <input class="Btn" type="submit" name="" id=" enter" value="登入"></input>
+                    <input class="Btn" type="submit" name="" id=" login" value="登入" onclick=" login()"></input>
                 </div>
                 <hr>
                 <div>
                     <p style="font-size: 8px;">測試用帳號：demo、密碼：demo</p>
                 </div>
+            </div>
         </form>
-
-
+    </div>
 </body>
 
 </html>
+
+<script>
+    const loginButton = document.getElementById('login');
+    const accountInput = document.getElementById('account');
+    const passwordInput = document.getElementById('password');
+    const resultOutput = document.getElementById('result');
+    function login() {
+        //檢查是否有輸入
+        if (accountInput.value == "") {
+            document.send.accountInput.focus();
+            return false;
+        }
+        else if (passwordInput.value == "") {
+            document.send.passwordInput.focus();
+            return false;
+        }
+        //登入檢查
+        const accountValue = accountInput.value
+        passwordValue = passwordInput.value
+        if (accountValue === 'demo' &&
+            passwordValue === 'demo') {
+            resultOutput.style.color = 'rgb(64, 55, 100)'
+            resultOutput.innerText = '歡迎登入電子發票系統'
+        } else {
+            resultOutput.style.color = '#6d1b37'
+            resultOutput.innerText = '帳號密碼有誤，請檢查是否正確'
+            setTimeout(() => {
+                self.location = document.referrer
+            }, 1500);
+        }
+    }
+
+
+</script>
+
+<!-- 
+function btn_check_empty() {
+ //check輸入的年齡不可為空白及必須是數字
+ if (document.getElementById("txtAge").value == ''){
+       alert('年齡欄位不可為空白!!')
+       return false;   
+       } else {
+    var regex_age =/^[0-9]+$/i;   //<--正規式的內容 ^[0-9]+$ 文字必須為 0到9
+    if (document.getElementById("txtAge").value.search(regex_age)){
+       alert('輸入年齡的字必需為阿拉伯數字!!')
+       return false;
+    }
+ }
+        resultOutput.style.color = 'rgb(64, 55, 100)'
+        resultOutput.innerText = '正在登入中，請稍等'
+
+        function accountcheck() {
+            if (check.accountInput.value == "") {
+                alert("請輸入帳號");
+            }
+            else (check.passwordInput.value == "")
+            alert("請輸入密碼");
+
+        }-->
